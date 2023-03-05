@@ -22,14 +22,14 @@ public class Restaurant {
         Food Fanta = new Food(5, "Fanta", 20, 150, (short)2);
 
         Menu menu = new Menu();
-//        menu.addNewFood(padthai);
-//        menu.addNewFood(pepsi);
-//        menu.addNewFood(tomyum);
-//        menu.addNewFood(coke);
-//        menu.addNewFood(Fanta);
+        menu.addNewFood(padthai);
+        menu.addNewFood(pepsi);
+        menu.addNewFood(tomyum);
+        menu.addNewFood(coke);
+        menu.addNewFood(Fanta);
         menu.showAllFood();
-//        menu.removeFood(2);
-//        menu.showAllFood();
+        menu.removeFood(2);
+        menu.showAllFood();
         menu.readAllRecord();
 
         boolean x = menu.searchByName("Tomyum");
