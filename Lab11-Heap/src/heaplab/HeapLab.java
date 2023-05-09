@@ -9,18 +9,19 @@ public class HeapLab {
         h.enqueue(60);
         h.enqueue(250);
         h.enqueue(500);
+        h.enqueue(10);
 
         //          500
         //  250             3000
         //20    60      50
         h.printAll();
-        System.out.println("");
-
-        System.out.println(h.dequeue());
+//        System.out.println("");
+//
+//        System.out.println(h.dequeue());
         //          300
         //  250             50
         //20    60
-        h.printAll();
+//        h.printAll();
         System.out.println("");
 
         h.heapSort();

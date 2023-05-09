@@ -52,7 +52,9 @@ public class Heap {
             while ((leftChildOfLastElement < size && heap[lastElementIndex] < heap[leftChildOfLastElement])
                     || (rightChildOfLastElement < size && heap[lastElementIndex] < heap[rightChildOfLastElement])) {
                 int swapIndex;
-                if (heap[leftChildOfLastElement] > heap[rightChildOfLastElement]) {
+                if (leftChildOfLastElement == size - 1){ //if there is only left child
+                    swapIndex = leftChildOfLastElement;
+                } else if (heap[leftChildOfLastElement] > heap[rightChildOfLastElement]){
                     swapIndex = leftChildOfLastElement;
                 } else {
                     swapIndex = rightChildOfLastElement;
@@ -86,7 +88,9 @@ public class Heap {
             while ((leftChildOfLastElement < last && heap[lastElementIndex] < heap[leftChildOfLastElement])
                     || (rightChildOfLastElement < last && heap[lastElementIndex] < heap[rightChildOfLastElement])) {
                 int swapIndex;
-                if (heap[leftChildOfLastElement] > heap[rightChildOfLastElement]) {
+                if (leftChildOfLastElement == last - 1){ //if there is only left child
+                    swapIndex = leftChildOfLastElement;
+                } else if (heap[leftChildOfLastElement] > heap[rightChildOfLastElement]){
                     swapIndex = leftChildOfLastElement;
                 } else {
                     swapIndex = rightChildOfLastElement;
