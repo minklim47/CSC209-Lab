@@ -45,6 +45,7 @@ public class Heap {
             int lastElement = heap[size - 1];
             heap[0] = lastElement;
             size--;
+            //move down
             int lastElementIndex = 0;
             int leftChildOfLastElement = lastElementIndex*2 +1;
             int rightChildOfLastElement = lastElementIndex*2 + 2;
@@ -68,5 +69,36 @@ public class Heap {
             root = -1;
         }
         return root;
+    }
+    public void heapSort(){
+        //phase 1: arrange the array into the heap structure
+        //phase 2: sort the heap
+        //No need to do phase 1 here because we already work on the heap
+        for (int last = size - 1; last > 0; last--){
+            //swap root with last
+            int temp = heap[last];
+            heap[last] = heap[0];
+            heap[0] = temp;
+            //move down from root
+            int lastElementIndex = 0;
+            int leftChildOfLastElement = lastElementIndex*2 +1;
+            int rightChildOfLastElement = lastElementIndex*2 + 2;
+            while ((leftChildOfLastElement < last && heap[lastElementIndex] < heap[leftChildOfLastElement])
+                    || (rightChildOfLastElement < last && heap[lastElementIndex] < heap[rightChildOfLastElement])) {
+                int swapIndex;
+                if (heap[leftChildOfLastElement] > heap[rightChildOfLastElement]) {
+                    swapIndex = leftChildOfLastElement;
+                } else {
+                    swapIndex = rightChildOfLastElement;
+                }
+                //swap
+                temp = heap[lastElementIndex];
+                heap[lastElementIndex] = heap[swapIndex];
+                heap[swapIndex] = temp;
+                lastElementIndex = swapIndex;
+                leftChildOfLastElement = lastElementIndex * 2 + 1;
+                rightChildOfLastElement = lastElementIndex * 2 + 2;
+            }
+        }
     }
 }

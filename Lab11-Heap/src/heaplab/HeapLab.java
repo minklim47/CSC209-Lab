@@ -21,5 +21,11 @@ public class HeapLab {
         //  250             50
         //20    60
         h.printAll();
+        System.out.println("");
+
+        h.heapSort();
+        h.printAll();
     }
+
+
 }
